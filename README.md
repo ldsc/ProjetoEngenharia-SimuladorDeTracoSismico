@@ -1,25 +1,25 @@
 
 # Table of Contents
 
-1.  [Nome do Software (ou Biblioteca):](#orge6a105e)
-2.  [Resumo e/ou informação extra:](#org509f983)
-3.  [Versão:](#orga0dc8a9)
-4.  [Data:](#org0c6b888)
-5.  [Autor de Contato:](#orge275c22)
-6.  [Lista dos Autores:](#orgfba94a1)
-7.  [Áreas de pesquisa vinculadas:](#orgd291565)
-8.  [Vinculo com:](#orga079873)
-9.  [Paradigmas:](#org9ce022e)
-10. [Tipo de Interface:](#org9dded91)
-11. [Plataformas Suportadas:](#orgf395f55)
-12. [Linguagens Utilizadas:](#org820a95e)
-13. [Bibliotecas Utilizadas (dependências):](#orgfb67a46)
-14. [Softwares utilizados (dependências)](#orgb80b146)
-15. [Tipo de Licença:](#org40b87bf)
-16. [Links:](#org0053c06)
+1.  [Nome do Software (ou Biblioteca):](#org893fe7a)
+2.  [Resumo e/ou informação extra:](#org53fcfd1)
+3.  [Versão:](#org1d04b9b)
+4.  [Data:](#orga79fc24)
+5.  [Autor de Contato:](#org7396f69)
+6.  [Lista dos Autores:](#org55cac99)
+7.  [Áreas de pesquisa vinculadas:](#org347b4c5)
+8.  [Vinculo com:](#orgd049022)
+9.  [Paradigmas:](#orgac16708)
+10. [Tipo de Interface:](#org4a5cb42)
+11. [Plataformas Suportadas:](#org3a6a322)
+12. [Linguagens Utilizadas:](#orgdd5c290)
+13. [Bibliotecas Utilizadas (dependências):](#org4351e88)
+14. [Softwares utilizados (dependências)](#org0e04ae8)
+15. [Tipo de Licença:](#org786b968)
+16. [Links:](#org115f8b7)
 
 
-<a id="orge6a105e"></a>
+<a id="org893fe7a"></a>
 
 # Nome do Software (ou Biblioteca):
 
@@ -28,35 +28,35 @@
     ProjetoEngenharia-Ramon-Savio-SimuladorDeTracoSismico-GITHUB
 
 
-<a id="org509f983"></a>
+<a id="org53fcfd1"></a>
 
 # Resumo e/ou informação extra:
 
--   
+-   Desenvolver um programa para a gerar um traço sísmico sintético de uma formação arbitrária a partir de dados da formação com espessura da camada, velocidade de propagação da onda acústica e a densidade.
 
 
-<a id="orga0dc8a9"></a>
+<a id="org1d04b9b"></a>
 
 # Versão:
 
 -   1.0.
 
 
-<a id="org0c6b888"></a>
+<a id="orga79fc24"></a>
 
 # Data:
 
 -   2014/2 - segundo semestre.
 
 
-<a id="orge275c22"></a>
+<a id="org7396f69"></a>
 
 # Autor de Contato:
 
 -   André Duarte Bueno <andreduartebueno@gmail.com>
 
 
-<a id="orgfba94a1"></a>
+<a id="org55cac99"></a>
 
 # Lista dos Autores:
 
@@ -65,7 +65,7 @@
 -   André Duarte Bueno <andreduartebueno@gmail.com>
 
 
-<a id="orgd291565"></a>
+<a id="org347b4c5"></a>
 
 # Áreas de pesquisa vinculadas:
 
@@ -73,56 +73,56 @@
 -   Geofísica
 
 
-<a id="orga079873"></a>
+<a id="orgd049022"></a>
 
 # Vinculo com:
 
 -   Trabalho da disciplina de programação prática.
 
 
-<a id="org9ce022e"></a>
+<a id="orgac16708"></a>
 
 # Paradigmas:
 
 -   POO - Programação Orientada a Objeto (códigos em C++)
 
 
-<a id="org9dded91"></a>
+<a id="org4a5cb42"></a>
 
 # Tipo de Interface:
 
 -   Terminal e gráfica (gnuplot).
 
 
-<a id="orgf395f55"></a>
+<a id="org3a6a322"></a>
 
 # Plataformas Suportadas:
 
 -   Windows e GNU/Linux e Mac OS X (não testada).
 
 
-<a id="org820a95e"></a>
+<a id="orgdd5c290"></a>
 
 # Linguagens Utilizadas:
 
 -   C++ 11.
 
 
-<a id="orgfb67a46"></a>
+<a id="org4351e88"></a>
 
 # Bibliotecas Utilizadas (dependências):
 
 -   CGnuplot - <https://github.com/ldsc/CGnuplot>
 
 
-<a id="orgb80b146"></a>
+<a id="org0e04ae8"></a>
 
 # Softwares utilizados (dependências)
 
 -   gnuplot <http://www.gnuplot.info/>
 
 
-<a id="org40b87bf"></a>
+<a id="org786b968"></a>
 
 # Tipo de Licença:
 
@@ -135,7 +135,7 @@
 -   Na descrição do projeto informe que trata-se de uma nova versão, que tem como base a versão anterior e DESTAQUE COM CLAREZA E OBJETIVIDADE QUAIS AS NOVIDADES DA NOVA VERSÃO.
 
 
-<a id="org0053c06"></a>
+<a id="org115f8b7"></a>
 
 # Links:
 
