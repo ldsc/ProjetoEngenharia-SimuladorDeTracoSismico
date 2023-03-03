@@ -1,0 +1,775 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass book
+\begin_preamble
+\usepackage {graphicx}
+\usepackage {longtable}
+\usepackage {indentfirst}
+\renewenvironment{center}{\par\centering}{\par}
+\end_preamble
+\use_default_options false
+\master DocumentoMestre-Trabalho-ProgramacaoPratica.lyx
+\maintain_unincluded_children false
+\language brazilian
+\language_package default
+\inputencoding iso8859-1
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement H
+\paperfontsize 12
+\spacing onehalf
+\use_hyperref false
+\papersize a4paper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Índice
+\shortcut idx
+\color #008000
+\end_index
+\paperwidth 210mm
+\paperheight 297mm
+\leftmargin 30mm
+\topmargin 25mm
+\rightmargin 20mm
+\bottommargin 20mm
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle fancy
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Chapter
+Elaboração
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Elaboração
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Elaboração"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Neste capítulo iremos apresentar o processo que levou a criação do software,
+ como: Entrevistas, pesquisas na bibliografia e elaboração de diagramas
+ que nos mostram os conhecimentos que seriam necessários para tal.
+ 
+\end_layout
+
+\begin_layout Section
+Análise de domínio
+\end_layout
+
+\begin_layout Standard
+A identificação de pacotes possui grande importância, pois demonstra as
+ relações entre as diferentes partes do sistema, como classes, componentes,
+ subclasses, interfaces, nós, colaborações e casos de uso.
+ 
+\end_layout
+
+\begin_layout Standard
+Após estudo dos requisitos/especificações do sistema, algumas entrevistas
+ com profissionais acadêmicos como o professor Fernando Moraes, estudos
+ na biblioteca do LENEP e disciplinas do curso foi possível identificar
+ nosso domínio de trabalho:
+\end_layout
+
+\begin_layout Itemize
+O pacote “Banco de Dados”, contendo as Propriedades físicas das camadas,
+ isto é, velocidade acústica, densidade e espessura que são valores obtidos
+ em medidas experimentais;
+\end_layout
+
+\begin_layout Itemize
+O pacote “Cálculo do traço sísmico sintético”, que contém os executáveis
+ específicos para a geração do traço sísmico, incluindo as respectivas constante
+s utilizadas nas equações.
+\end_layout
+
+\begin_layout Itemize
+O pacote “Biblioteca Numérica”, em cujo conteúdo está o método numérico
+ necessário para o uso da convoluções que serão utilizados no programa.
+\end_layout
+
+\begin_layout Itemize
+O pacote 
+\begin_inset Quotes eld
+\end_inset
+
+Gráficos
+\begin_inset Quotes erd
+\end_inset
+
+ que inclui o acesso ao Gnuplot.
+\end_layout
+
+\begin_layout Section
+Formulação teórica
+\end_layout
+
+\begin_layout Standard
+Apresentaremos nesta seção o embasamento teórico para a criação e execução
+ deste projeto de engenharia.
+\end_layout
+
+\begin_layout Subsection
+Funções 
+\emph on
+Wavelet
+\end_layout
+
+\begin_layout Standard
+Graças a capacidade de decompor as funções tanto no domínio da frequência
+ quanto no domínio do tempo, as funções 
+\emph on
+wavelet
+\emph default
+ são ferramentas poderosas de processamento de sinais, muito aplicadas na
+ compressão de dados, eliminação de ruido, separação de componentes no sinal,
+ identificação de singularidades, detecção de auto-semelhança, e muito mais.
+\end_layout
+
+\begin_layout Standard
+Para ser considerada uma 
+\emph on
+wavelet
+\emph default
+, uma função tem de atender as seguintes características:
+\end_layout
+
+\begin_layout Standard
+A área total sob a curva da função é 0, ou seja 
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula 
+\begin{equation}
+\int_{-\infty}^{+\infty}\psi\left(t\right)dt=0
+\end{equation}
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+A energia da função é finita, ou seja 
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula 
+\begin{equation}
+\int_{-\infty}^{+\infty}\mid\psi\left(t\right)\mid^{2}dt<L\quad L\epsilon N
+\end{equation}
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Sendo:
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+\begin_inset Formula $\psi(t)$
+\end_inset
+
+= Uma função qualquer que atenda as características acima.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+\begin_inset Formula $t$
+\end_inset
+
+= Tempo.
+\end_layout
+
+\begin_layout Standard
+Para ser utilizada na análise de sinais uma função 
+\emph on
+wavelet
+\emph default
+ precisa também de outra característica que chamamos de condição de admissibilid
+ade, e que permite a existência da transformada inversa de 
+\emph on
+wavelet
+\emph default
+.
+\end_layout
+
+\begin_layout Standard
+Alguns exemplos de funções que atendem estas características são a função
+ wavelet de Morlet 
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula 
+\begin{equation}
+\psi\left(t\right)=\exp^{-t^{2}}\cos\left(\pi t\sqrt{\left(\frac{2}{\ln2}\right)}\right)\approx\exp^{-t^{2}}\cos\left(2.885\pi t\right)
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Ramon Diogo/Desktop/Wavelet_-_Morlet.png
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\emph on
+Wavelet 
+\emph default
+de Morlet
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+e a curva conhecida como chapéu mexicano (do inglês 
+\emph on
+mexican hat
+\emph default
+), definida por:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula 
+\begin{equation}
+\psi\left(t\right)=\left(1-2t^{2}\right)\exp^{-t^{2}}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+que é a segunda derivada da função Gaussiana 
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula 
+\begin{equation}
+-0.5\exp^{-t2}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Ramon Diogo/Desktop/Wavelet_-_Mex_Hat.png
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\emph on
+Wavelet Chapéu Mexicano
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Convolução:
+\end_layout
+
+\begin_layout Standard
+Em matemática, particularmente na área de análise funcional, 
+\emph on
+convolução
+\emph default
+ é um operador linear que, a partir de duas funções dadas, resulta numa
+ terceira que mede a área subentendida pela superposição das mesmas em função
+ do deslocamento existente entre elas.
+ O conceito de convolução está ligado à integral de superposição na 
+\emph on
+Óptica de Fourier
+\emph default
+, à integral de Duhamel na teoria das vibrações, ao Teorema de Borel no
+ estudo de sistemas lineares invariantes no tempo, ao conceito de média
+ móvel, às funções de correlação e de autocorrelação em estatística e em
+ processamento de sinais, e a diversos conceitos usados em análise de imagens,
+ como digitalização, alisamento, embaçamento e aberração cromática.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula 
+\begin{equation}
+f(t)=\int_{-\infty}^{+\infty}f_{1}\left(x\right)f_{2}\left(t-x\right)dx
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+que geralmente é expressa simbolicamente como:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula 
+\begin{equation}
+f\left(t\right)=f_{1}\left(t\right)^{*}f_{2}\left(t\right)
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Podemos estudar a convolução sob dois pontos de vista distintos: 
+\end_layout
+
+\begin_layout Itemize
+Do sinal de entrada: como cada ponto do sinal de entrada contribui para
+ vários pontos do sinal de saída.
+ 
+\end_layout
+
+\begin_layout Itemize
+Do sinal de saída: como cada ponto do sinal de saída recebeu contribuições
+ de vários pontos do sinal de entrada.
+ 
+\end_layout
+
+\begin_layout Standard
+Estas duas perspectivas são formas diferentes de analisar a mesma operação
+ matemática, e portanto são equivalentes: a primeira fornece uma idéia conceitua
+l da convolução, enquanto que a segunda descreve a matemática da convolução.
+\end_layout
+
+\begin_layout Standard
+REFERÊNCIA -> Bracewell, R.
+ - The Fourier Transform And Its Applications, 3rd.
+ Edition, New York: McGraw-Hill, 2000.
+\end_layout
+
+\begin_layout Subsection
+Impedância Acústica
+\end_layout
+
+\begin_layout Standard
+A impedância acústica é definida como o produto entre a velocidade compressional
+ e a densidade da rocha.
+ 
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula 
+\begin{equation}
+Z=\rho V
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Sendo:
+\end_layout
+
+\begin_layout Itemize
+\align block
+
+\emph on
+Z
+\emph default
+ = Impedância acústica
+\end_layout
+
+\begin_layout Itemize
+\align block
+\begin_inset Formula $\rho$
+\end_inset
+
+ = Densidade da camada
+\end_layout
+
+\begin_layout Itemize
+\align block
+
+\emph on
+V = 
+\emph default
+Velocidade da onda acústica
+\end_layout
+
+\begin_layout Standard
+Isso significa que a impedância acústica é uma propriedade de camada e não
+ uma propriedade de interface como a amplitude do dado sísmico.
+ Essa distinção faz com que a impedância acústica seja uma poderosa ferramenta
+ a ser utilizada no processo de caracterização.
+\end_layout
+
+\begin_layout Standard
+Sendo então um dado que se refere às camadas de rocha, a impedância acústica
+ possui várias vantagens.
+ De acordo com Latimer et al.
+ (2000) um modelo de impedância de boa qualidade contém mais informação
+ que o dado sísmico, pois, esse modelo possui todas as informações contidas
+ no dado sísmico, além de possuir a informação adicional dos dados de perfis
+ de poços.
+ O volume de impedância acústica, dependendo do método aplicado para a sua
+ obtenção, é o resultado da integração de dados provenientes de diferentes
+ fontes, normalmente o dado sísmico, os dados de poços e/ou os modelos de
+ velocidade.
+ Assim, construir um modelo de impedância acústica é a maneira mais natural
+ de se integrar as informações, gerando ao final do processo um modelo que
+ pode ser compreendido por geofísicos, geólogos e engenheiros.
+\end_layout
+
+\begin_layout Standard
+REFERÊNCIA -> LATIMER RB, DAVIDSON R & RIEL van P.
+ 2000.
+ An interpreter's guide to understanding and working with seismic-derived
+ acoustic impedance data.
+ The Leading Edge, 19: 242-256.
+ 
+\end_layout
+
+\begin_layout Subsection
+Coeficiente de Reflexão
+\end_layout
+
+\begin_layout Standard
+Quando uma onda longitudinal atinge uma interface entre duas camadas com
+ inpedância acústica contrastante, parte desta onda vai se refletir e parte
+ vai penetrar na segunda camanda.
+ Porém, são gerados quatro tipos de ondas longitudinal refletida, transmitida,
+ transversal refletida e transmitida.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ../imagens/Reflexao.png
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Incidência de uma onda acústica em uma interface entre rochas de impedância
+ diferente
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Se o ângulo de incidência for normal ou próximo do normal à interface, o
+ coeficiente de reflexão será dado pela seguinte equação:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula 
+\begin{equation}
+R=\frac{A_{1}}{A_{0}}=\frac{Z_{2}-Z_{1}}{Z_{2}+Z_{1}}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Sendo:
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+R
+\emph default
+ = Coeficiente de reflexão
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+A
+\begin_inset Formula $_{0}$
+\end_inset
+
+
+\emph default
+= Amplitude da onda incidente
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+A
+\begin_inset Formula $_{1}$
+\end_inset
+
+
+\emph default
+= Amplitude da onda refletida
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+A
+\begin_inset Formula $_{2}$
+\end_inset
+
+
+\emph default
+=Amplitude da onda refratada
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Z
+\begin_inset Formula $_{1}$
+\end_inset
+
+
+\emph default
+= Impedância acústica da camada 1
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Z
+\begin_inset Formula $_{2}$
+\end_inset
+
+
+\emph default
+= Impedância acústica da camada 2
+\end_layout
+
+\begin_layout Section
+Identificação de pacotes
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Identificação de pacotes
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Identificação-de-pacotes"
+
+\end_inset
+
+
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Assuntos
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Logo abaixo temos o diagrama de pacotes para elaboração do software, como
+ descrito na análise de domínio.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Sávio/Dropbox/Rarrá do BuBU/Trabalho_Savio_Ramom/imagens/pacote1.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Diagrama de pacotes
+\begin_inset CommandInset label
+LatexCommand label
+name "cap:Diagrama-pacotes"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

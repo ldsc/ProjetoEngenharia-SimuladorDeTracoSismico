@@ -1,0 +1,388 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass extbook
+\begin_preamble
+\usepackage {graphicx}
+\usepackage {longtable}
+\usepackage {indentfirst}
+\renewenvironment{center}{\par\centering}{\par}
+
+% Comentar linhas abaixo se não estiver usando pacote abntex
+% ou se o pacote ainda não foi instalado.
+% neste caso sugere-se usar citações no padrão apalike (lembra o da anbt).
+%\usepackage[alf ,abnt-etal-cite=2 , abnt-year-extra-label=yes , abnt-etal-list=0]{abntcite}
+%\usepackage {helvet}
+%\renewcommand {\familydefault}{\sfdefault}
+
+% Para uso de listagens de código
+\usepackage{color}
+\definecolor{azulclaro}{rgb}{0.6,1,1}%   rgb color model
+% Informa que vai usar o pacote listings, 
+% disponibilizado em /usr/share/texmf/doc/latex/styles/listings.dvi
+\usepackage{listings}
+\end_preamble
+\use_default_options false
+\master DocumentoMestre-Trabalho-ProgramacaoPratica.lyx
+\maintain_unincluded_children false
+\language brazilian
+\language_package auto
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement h
+\paperfontsize 12
+\spacing onehalf
+\use_hyperref false
+\papersize a4paper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Índice
+\shortcut idx
+\color #008000
+\end_index
+\paperwidth 210mm
+\paperheight 297mm
+\leftmargin 30mm
+\topmargin 25mm
+\rightmargin 20mm
+\bottommargin 20mm
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle fancy
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Chapter
+Documentação 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lhead{
+\backslash
+thechapter - Documentação} 
+\backslash
+rhead{
+\backslash
+thepage} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A presente documentação refere-se ao uso do Simulador de Traço Sísmico.
+ Esta documentação tem o formato de uma apostila que explica passo a passo
+ como usar o software.
+ 
+\end_layout
+
+\begin_layout Section
+Documentação do usuário
+\end_layout
+
+\begin_layout Standard
+Descreve-se aqui o manual do usuário, um guia que explica, passo a passo
+ a forma de instalação e uso do software desenvolvido.
+\end_layout
+
+\begin_layout Subsection
+Como rodar o software
+\end_layout
+
+\begin_layout Standard
+Segue abaixo o passo a passo para rodar o software:
+\end_layout
+
+\begin_layout Standard
+Abrir o terminal, vá para o diretório onde esta o código, compile o programa
+ e depois execute.
+ Logo após executar, seguir os seguintes passos:
+\end_layout
+
+\begin_layout Enumerate
+Escolher o tipo de wavelet:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Para utilizar CM, escolha 1;
+\end_layout
+
+\begin_layout Enumerate
+Para utilizar Morlet, escolha 2;
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Informar o número de amostra da 
+\emph on
+wavelet
+\emph default
+:
+\end_layout
+
+\begin_deeper
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Usualmente é utilizado 60 para Chápeu Mexicano.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Usualmente é utilizado 100 para Morlet.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Informar o intervalo de amostragem da 
+\emph on
+wavelet
+\emph default
+:
+\end_layout
+
+\begin_deeper
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Usualmente é utilizado 0.004 segundos.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Informar o pico de frequência da 
+\emph on
+wavelet
+\emph default
+:
+\end_layout
+
+\begin_deeper
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Usualmente é utilizado 6 Hz.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Informar o nome do arquivo de entrada.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Informar o nome de saída.
+\end_layout
+
+\begin_layout Standard
+Veja no Capítulo 7 - Teste, exemplos de uso do software.
+\end_layout
+
+\begin_layout Section
+Documentação para desenvolvedor
+\end_layout
+
+\begin_layout Standard
+Apresenta-se nesta seção a documentação para o desenvolvedor, isto é, informaçõe
+s para usuários que queiram modificar, aperfeiçoar ou ampliar este software.
+\end_layout
+
+\begin_layout Subsection
+Dependências
+\end_layout
+
+\begin_layout Standard
+Para compilar o software é necessário atender as seguintes dependências:
+\end_layout
+
+\begin_layout Itemize
+No sistema operacional GNU/Linux::
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Instalar o compilador g++ da GNU disponível em 
+\begin_inset CommandInset href
+LatexCommand href
+name "http://gcc.gnu.org"
+target "http://gcc.gnu.org"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+Para instalar no GNU/Linux use o comando 
+\family typewriter
+yum install gcc
+\family default
+.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+No sistema operacional Windows:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Instalar um compilador apropriado.
+ 
+\end_layout
+
+\begin_layout Itemize
+Recomenda-se o Dev C++ disponível em http://dev-c.softonic.com.br/.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+O software gnuplot, deve estar instalado.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Gnuplot está disponível no endereço http://www.gnuplot.info/
+\end_layout
+
+\begin_layout Itemize
+É possível que haja necessidade de setar o caminho para execução do gnuplot.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+O programa depende da existência de um arquivo de dados (formato .txt) para
+ preencher os vetores relacionados aos parâmetros da camada (densidade,
+ velocidade e tempo).
+ 
+\end_layout
+
+\begin_layout Subsection
+Documentação usando doxygen 
+\end_layout
+
+\begin_layout Standard
+A documentação do código do software foi feita usando o padrão JAVADOC.
+ Depois de documentar o código, o software 
+\emph on
+doxygen
+\emph default
+ foi usado para gerar a documentação do desenvolvedor no formato 
+\emph on
+html
+\emph default
+.
+ O software 
+\emph on
+doxygen
+\emph default
+ lê os arquivos com os códigos (*.h e *.cpp) e gera uma documentação muito
+ útil e de fácil navegação no formato 
+\emph on
+html
+\emph default
+.
+ Apresenta-se a seguir a imagem de hieraquia de classe mostrada na tela
+ de saída gerada pelo software 
+\emph on
+doxygen
+\emph default
+: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename ../imagens/doxy.png
+	width 100text%
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Hierarquia de classe
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

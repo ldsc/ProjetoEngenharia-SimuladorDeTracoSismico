@@ -1,0 +1,412 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass book
+\begin_preamble
+\usepackage {graphicx}
+\usepackage {longtable}
+\usepackage {indentfirst}
+\end_preamble
+\use_default_options false
+\master DocumentoMestre-Trabalho-ProgramacaoPratica.lyx
+\maintain_unincluded_children false
+\language brazilian
+\language_package default
+\inputencoding iso8859-1
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement h
+\paperfontsize 12
+\spacing onehalf
+\use_hyperref false
+\papersize a4paper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Índice
+\shortcut idx
+\color #008000
+\end_index
+\paperwidth 210mm
+\paperheight 297mm
+\leftmargin 30mm
+\topmargin 25mm
+\rightmargin 20mm
+\bottommargin 20mm
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 2
+\paperpagestyle fancy
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Capa
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\size large
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+thispagestyle{empty} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\size large
+UNIVERSIDADE ESTADUAL DO NORTE FLUMINENSE
+\begin_inset Newline newline
+\end_inset
+
+LABORATÓRIO DE ENGENHARIA E EXPLORAÇÃO DE PETRÓLEO
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\size large
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+O título deve ser o mais claro possível, não deixando dúvidas sobre o assunto
+ em questão.
+ O uso de vírgula ou dois pontos pode deixar o título com mais impacto.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 6cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\size large
+Simulador de Traço Sísmico
+\size default
+ - VERSÃO 1.0
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\size large
+TRABALHO DA DISCIPLINA PROGRAMAÇÃO PRÁTICA
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 6cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\size large
+RAMON CRESPO DIOGO
+\begin_inset Newline newline
+\end_inset
+
+SÁVIO DA SILVEIRA JANUÁRIO
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 6cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\size large
+MACAÉ - RJ
+\begin_inset Newline newline
+\end_inset
+
+MARÇO - 2015
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Introdução
+\begin_inset CommandInset label
+LatexCommand label
+name "cha:Introdução"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lhead{
+\backslash
+thechapter
+\backslash
+space - Introdução}
+\backslash
+rhead{}
+\backslash
+pagenumbering{arabic}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Neste capitulo iremos abordar um estratégia que tem sido utilizada na fase
+ de exploração de petroleo, o traço sísmico sintético.
+\end_layout
+
+\begin_layout Standard
+A estimativa da resposta sísmica de um intervalo litológico atravessado
+ por poços é uma das pedras fundamentais de um bom trabalho de interpretação
+ sísmica.
+ Com tal propósito, antes de se iniciar a interpretação propriamente dita,
+ utiliza-se construir o sismograma sintético, que corresponde ao resultado
+ da modelagem da resposta sísmica em determinada área, normalmente para
+ incidência vertical (embora o sismograma possa e deva ser gerado, considerando-
+se as variações decorrentes do afastamento fonte-receptor que também estão
+ presentes no dado sísmico real) através do uso de informações de velocidade
+ e densidade medidas em perfis de poços.
+ Sua construção exige ainda a estimativa de um pulso sísmico que pode ser
+ matemático (por exemplo um pulso de ricker com 20 Hz), ou estimado a partir
+ dos dados sísmicos disponíveis.
+ Tal prática serve a vários propósitos, dos quais podemos citas os mais
+ importantes: 
+\end_layout
+
+\begin_layout Standard
+Durante a fase de processamento sísmico, por exemplo, sua construção pode
+ ajudar na avaliação da eficiência de etapas como a deconvolução ou o tratamento
+ de amplitudes; 
+\end_layout
+
+\begin_layout Standard
+Na interpretação será utilizado para correlação da litologia atravessada
+ pelo poço (em profundidade) com sua expressão no dado sísmico real, e conseqüen
+te identificação do comportamento sísmico de interfaces litológicas (se
+ uma determinada interface corresponde a um coeficiente de reflexão positivo
+ ou negativo e definição da sua intensidade); 
+\end_layout
+
+\begin_layout Standard
+Investigação dos limites de resolução do dado sísmico, isto é, se o dado
+ sísmico disponível possibilitará ao intérprete individualizar a reflexão
+ do topo e da base de determinado alvo litológico; 
+\end_layout
+
+\begin_layout Standard
+Investigar a convenção de polaridade de um dado sísmico cuja convenção seja
+ desconhecida; 
+\end_layout
+
+\begin_layout Standard
+Se na área estão disponíveis vários poços, com respectivos perfis de velocidade
+ e densidade, o interprete poderá construir vários sismogramas, para avaliar
+ a variabilidade da sismofácie associada à determinada interface.
+ Isso o ajudará durante a interpretação, a admitir tal variabilidade durante
+ o processo de rastreamento das interfaces; 
+\end_layout
+
+\begin_layout Standard
+Em processos como o da inversão do dado sísmico, para estimativa da função
+ impedância a partir dos dados de amplitude, a construção do sismograma
+ será necessária para estimativa da wavelet e calibração do processo de
+ inversão; 
+\end_layout
+
+\begin_layout Standard
+Se a correlação do sismograma sintético com o dado sísmico for satisfatória,
+ o perfil sônico (de velocidades) usado na sua construção pode ser usado
+ (através da integração dos tempos de trânsito em cada intervalo) para construçã
+o de uma relação tempo-profundidade que permitirá ao intérprete traduzir
+ toda a litologia atravessada pelo poço, na sua posição em tempo na seção
+ sísmica; 
+\end_layout
+
+\begin_layout Standard
+A classificação de sismofácies características de determinados intervalos
+ litoestratigráficos também se vale da construção de sismogramas sintéticos
+ e correlação das eletrofácies com a resposta sísmica do intervalo.
+ 
+\end_layout
+
+\begin_layout Standard
+No presente trabalho, é proposto a criação de um software orientado a objeto
+ em C++ que gere o traço sísmico siténtico a partir de dados da formação
+ que possibilita correlação com a sísimica real.
+ 
+\end_layout
+
+\begin_layout Section
+Escopo do problema
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Escopo-do-Problema"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+O software irá determinar a impedância, resistividade e assim gerar o traço
+ sísmico sintético utilizando o método da convolução com auxílo das funções
+ Wavelet de Morlet ou Ricker.
+ Há varias utiizações para o software uma delas é que com o traço sismico
+ sintético, durante a fase de processamento sísmico, por exemplo, sua construção
+ pode ajudar na avaliação da eficiência de etapas como a deconvolução ou
+ o tratamento de amplitudes;
+\end_layout
+
+\begin_layout Section
+Objetivos
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Objetivos"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Os objetivos deste trabalho são:
+\end_layout
+
+\begin_layout Itemize
+Objetivo geral:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Desenvolver um programa para a gerar um traço sísmico sintético de uma formação
+ arbitrária a partir de dados da formação com espessura da camada, velocidade
+ de propagação da onda acústica e a densidade.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Objetivos específicos:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Permitir ao usuario entrar com dados característicos da formação.
+\end_layout
+
+\begin_layout Itemize
+Disponibilizar métodos de entrada de dados a partir de arquivos do tipo
+ texto.
+\end_layout
+
+\begin_layout Itemize
+Desenvolver um software que receba dados reais ou arbitrários que calcule
+ a impedância e reflectividade de cada camada, a partir de onde será gerado
+ um traço sísmico por convolução com uma wavelet indicada pelo o usuário.
+\end_layout
+
+\end_deeper
+\end_body
+\end_document
